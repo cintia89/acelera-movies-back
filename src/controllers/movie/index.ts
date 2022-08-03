@@ -37,3 +37,11 @@ export const postMovie = async (request, response) => {
 
   return response.json(saveMovie)
 }
+
+export const deleteMovie = async (request, response) => {
+  const { id } = request.params
+  const movieDeletRepository = getRepository(Movie)
+  const deletMovie = await movieDeletRepository.delete(id)
+
+  return response.json(deletMovie)
+}
