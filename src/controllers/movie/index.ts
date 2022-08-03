@@ -40,8 +40,17 @@ export const postMovie = async (request, response) => {
 
 export const deleteMovie = async (request, response) => {
   const { id } = request.params
-  const movieDeletRepository = getRepository(Movie)
-  const deletMovie = await movieDeletRepository.delete(id)
+  const deletRepository = getRepository(Movie)
+  const deletMovie = await deletRepository.delete(id)
 
   return response.json(deletMovie)
+}
+
+export const putMovie = async (request, response) => {
+  const { id } = request.params
+  const body = request.body
+  const putRepository = getRepository(Movie)
+  const putMovieId = await putRepository.update(id, body)
+
+  return response.json(putMovieId)
 }

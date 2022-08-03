@@ -5,6 +5,7 @@ import {
   getTODO,
   itsWorks,
   postMovie,
+  putMovie,
 } from "@controllers/movie"
 
 export const defineRoutes = (app) => {
@@ -14,4 +15,5 @@ export const defineRoutes = (app) => {
   app.get("/movie/:id", getMovieId)
   app.post("/movie", postMovie)
   app.delete("/movie/:id", deleteMovie)
+  app.put("/movie/:id", putMovie)
 }
