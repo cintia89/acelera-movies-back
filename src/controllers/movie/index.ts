@@ -31,11 +31,15 @@ export const getMovieId = async (request, response) => {
 }
 
 export const postMovie = async (request, response) => {
-  const movieRepository = getRepository(Movie)
-  const movie = request.body
-  const saveMovie = await movieRepository.save(movie)
+  try {
+    const movieRepository = getRepository(Movie)
+    const movie = movieRepository.create(request.body)
+    await movieRepository.save(movie)
 
-  return response.json(saveMovie)
+    return response.status(200).json({ mesage: "sucesso" })
+  } catch (error) {
+    return response.status(500).json(error)
+  }
 }
 
 export const deleteMovie = async (request, response) => {

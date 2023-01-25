@@ -26,14 +26,14 @@ export class Movie {
   @Column({ name: "image", type: "varchar" })
   image: String
 
-  @Column({ name: "releaseDate", type: "timestamp" })
+  @Column({ name: "releaseDate", type: "date" })
   releaseDate: Date
 
   @Column({ name: "director", type: "varchar" })
   director: String
 
-  @Column({ name: "writer", type: "varchar" })
-  writer: String
+  @Column({ name: "writter", type: "varchar" })
+  writter: String
 
   @Column({ name: "studio", type: "varchar" })
   studio: String
@@ -47,7 +47,7 @@ export class Movie {
   @Column({ name: "awards", type: "varchar" })
   awards: String
   // awards: [Awards]
-  @Column({ name: "note", type: "int" })
+  @Column({ name: "note", type: "integer" })
   note: Number
 
   @CreateDateColumn({
