@@ -2,14 +2,6 @@ import { Movie } from "@models/entity/Movie"
 import { response } from "express"
 import { getRepository } from "typeorm"
 
-export const itsWorks = (request, response) => {
-  return response.json({ message: "It's Works!!" })
-}
-
-export const getTODO = (request, response) => {
-  return response.json({ todos: [] })
-}
-
 export const getMovie = async (request, response) => {
   try {
     const movieRepository = getRepository(Movie)

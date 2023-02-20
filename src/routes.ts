@@ -3,15 +3,12 @@ import {
   deleteMovie,
   getMovie,
   getMovieId,
-  getTODO,
-  itsWorks,
   postMovie,
   putMovie,
 } from "@controllers/movie"
+import { createUser } from "@controllers/users"
 
 export const defineRoutes = (app) => {
-  app.get("/", itsWorks)
-  app.get("/todo", getTODO)
   app.get("/movie", getMovie)
   app.get("/movie/:id", getMovieId)
   app.post("/movie", postMovie)
@@ -19,4 +16,5 @@ export const defineRoutes = (app) => {
   app.put("/movie/:id", putMovie)
 
   app.post("/login", postLogin)
+  app.post("/users", createUser)
 }
